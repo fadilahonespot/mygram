@@ -29,14 +29,12 @@ func ConnectDB() *gorm.DB {
 		db = db.Debug()
 	}
 
-	if os.Getenv("DB_MIGRATION") == "true" {
-		db.AutoMigrate(
-			&entity.User{},
-			&entity.Photo{},
-			&entity.Comment{},
-			&entity.SocialMedia{},
-		)
-	}
+	db.AutoMigrate(
+		&entity.User{},
+		&entity.Photo{},
+		&entity.Comment{},
+		&entity.SocialMedia{},
+	)
 
 	return db
 }

@@ -1,0 +1,1061 @@
+{
+	"info": {
+		"_postman_id": "699b27c2-89d5-4e67-8669-647a32cfd16a",
+		"name": "Mygram",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10350858"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"fadilah\",\n    \"password\": \"1234567\",\n    \"age\": 20,\n    \"email\": \"testing22@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:2354/users/register",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"1234567\",\n    \"email\": \"testing22@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:2354/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"1234567\",\n    \"email\": \"testing22@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:2354/users/login",
+									"host": [
+										"localhost"
+									],
+									"port": "2354",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Mar 2024 06:28:18 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "233"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Login Success\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmcyMkBnbWFpbC5jb20iLCJleHAiOjE3MTE0MzQ0OTgsInVzZXJuYW1lIjoiZmFkaWxhaCJ9.CS0w-C8NTXihrV3eqJ1Vj9TpJ18I69uOMmWo-TSzFLI\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmcyMkBnbWFpbC5jb20iLCJleHAiOjE3MTE0MjYwNTQsInVzZXJuYW1lIjoiZmFkaWxhaCJ9.DQDls6sT2iZ0oKfSYe8BXMiIDfVtyEI_4Ii_dZO649k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"testing23@gmail.com\",\n    \"username\": \"fadil\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:2354/users/1",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmcyMkBnbWFpbC5jb20iLCJleHAiOjE3MTE0MjYwNTQsInVzZXJuYW1lIjoiZmFkaWxhaCJ9.DQDls6sT2iZ0oKfSYe8BXMiIDfVtyEI_4Ii_dZO649k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:2354/users",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Photo",
+			"item": [
+				{
+					"name": "Create Photo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmcyMkBnbWFpbC5jb20iLCJleHAiOjE3MTE0MzQ0OTgsInVzZXJuYW1lIjoiZmFkaWxhaCJ9.CS0w-C8NTXihrV3eqJ1Vj9TpJ18I69uOMmWo-TSzFLI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"persawahan\",\n    \"caption\": \"ini adalah persawahan\",\n    \"photo_url\": \"http://google.com/persawahan.jpeg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:2354/photos",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"pemandangan\",\n    \"caption\": \"ini adalah pemandangan\",\n    \"photo_url\": \"http://google.com/pemandangan.jpeg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:2354/photos",
+									"host": [
+										"localhost"
+									],
+									"port": "2354",
+									"path": [
+										"photos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Mar 2024 06:28:34 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "222"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Photo Created\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"pemandangan\",\n        \"caption\": \"ini adalah pemandangan\",\n        \"photo_url\": \"http://google.com/pemandangan.jpeg\",\n        \"user_id\": 5,\n        \"created_at\": \"2024-03-25T13:28:33.842374+07:00\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Photo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmcyMkBnbWFpbC5jb20iLCJleHAiOjE3MTE0MzQ0OTgsInVzZXJuYW1lIjoiZmFkaWxhaCJ9.CS0w-C8NTXihrV3eqJ1Vj9TpJ18I69uOMmWo-TSzFLI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:2354/photos",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Photo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:2354/photos",
+									"host": [
+										"localhost"
+									],
+									"port": "2354",
+									"path": [
+										"photos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Mar 2024 06:33:47 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "617"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Get Photos Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"pemandangan\",\n            \"caption\": \"ini adalah pemandangan\",\n            \"photo_url\": \"http://google.com/pemandangan.jpeg\",\n            \"user_id\": 5,\n            \"created_at\": \"2024-03-25T13:28:33.842374+07:00\",\n            \"updated_at\": \"2024-03-25T13:28:33.842374+07:00\",\n            \"User\": {\n                \"email\": \"testing22@gmail.com\",\n                \"username\": \"fadilah\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"title\": \"persawahan\",\n            \"caption\": \"ini adalah persawahan\",\n            \"photo_url\": \"http://google.com/persawahan.jpeg\",\n            \"user_id\": 5,\n            \"created_at\": \"2024-03-25T13:29:24.825411+07:00\",\n            \"updated_at\": \"2024-03-25T13:29:24.825411+07:00\",\n            \"User\": {\n                \"email\": \"testing22@gmail.com\",\n                \"username\": \"fadilah\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Photo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmcyMkBnbWFpbC5jb20iLCJleHAiOjE3MTE0MzQ0OTgsInVzZXJuYW1lIjoiZmFkaWxhaCJ9.CS0w-C8NTXihrV3eqJ1Vj9TpJ18I69uOMmWo-TSzFLI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"persawahan 201\",\n    \"caption\": \"ini adalah persawahan\",\n    \"photo_url\": \"http://google.com/persawahan.jpeg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:2354/photos/2",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"photos",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Photo",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"persawahan 201\",\n    \"caption\": \"ini adalah persawahan\",\n    \"photo_url\": \"http://google.com/persawahan.jpeg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:2354/photos/2",
+									"host": [
+										"localhost"
+									],
+									"port": "2354",
+									"path": [
+										"photos",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Mar 2024 06:57:50 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "223"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Photo Updated\",\n    \"data\": {\n        \"id\": 2,\n        \"title\": \"persawahan 201\",\n        \"caption\": \"ini adalah persawahan\",\n        \"photo_url\": \"http://google.com/persawahan.jpeg\",\n        \"user_id\": 5,\n        \"updated_at\": \"2024-03-25T13:57:49.740752+07:00\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Photo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmcyMkBnbWFpbC5jb20iLCJleHAiOjE3MTE0MzQ0OTgsInVzZXJuYW1lIjoiZmFkaWxhaCJ9.CS0w-C8NTXihrV3eqJ1Vj9TpJ18I69uOMmWo-TSzFLI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:2354/photos/2",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"photos",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Photo",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:2354/photos/2",
+									"host": [
+										"localhost"
+									],
+									"port": "2354",
+									"path": [
+										"photos",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Mar 2024 07:01:40 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Your photo has been successfully deleted\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Create Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmcyMkBnbWFpbC5jb20iLCJleHAiOjE3MTE0MzQ0OTgsInVzZXJuYW1lIjoiZmFkaWxhaCJ9.CS0w-C8NTXihrV3eqJ1Vj9TpJ18I69uOMmWo-TSzFLI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"sangat indah pemandangannya 200\",\n    \"photo_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:2354/comments",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"message\": \"sangat indah pemandangannya\",\n    \"photo_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:2354/comments",
+									"host": [
+										"localhost"
+									],
+									"port": "2354",
+									"path": [
+										"comments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Mar 2024 07:17:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "168"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Commen added\",\n    \"data\": {\n        \"id\": 2,\n        \"message\": \"sangat indah pemandangannya\",\n        \"photo_id\": 1,\n        \"user_id\": 5,\n        \"created_at\": \"2024-03-25T14:17:53.375676+07:00\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Comments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmcyMkBnbWFpbC5jb20iLCJleHAiOjE3MTE0MzQ0OTgsInVzZXJuYW1lIjoiZmFkaWxhaCJ9.CS0w-C8NTXihrV3eqJ1Vj9TpJ18I69uOMmWo-TSzFLI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:2354/comments",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:2354/comments",
+									"host": [
+										"localhost"
+									],
+									"port": "2354",
+									"path": [
+										"comments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Mar 2024 07:27:51 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "785"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"List comment\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"message\": \"pemandangan sawah hijau\",\n            \"photo_id\": 3,\n            \"user_id\": 5,\n            \"created_at\": \"2024-03-25T14:17:26.630458+07:00\",\n            \"updated_at\": \"2024-03-25T14:17:26.630458+07:00\",\n            \"User\": {\n                \"id\": 5,\n                \"email\": \"testing22@gmail.com\",\n                \"username\": \"fadilah\"\n            },\n            \"photo\": {\n                \"id\": 3,\n                \"title\": \"persawahan\",\n                \"caption\": \"ini adalah persawahan\",\n                \"photo_url\": \"http://google.com/persawahan.jpeg\",\n                \"user_id\": 5\n            }\n        },\n        {\n            \"id\": 2,\n            \"message\": \"sangat indah pemandangannya\",\n            \"photo_id\": 1,\n            \"user_id\": 5,\n            \"created_at\": \"2024-03-25T14:17:53.375676+07:00\",\n            \"updated_at\": \"2024-03-25T14:17:53.375676+07:00\",\n            \"User\": {\n                \"id\": 5,\n                \"email\": \"testing22@gmail.com\",\n                \"username\": \"fadilah\"\n            },\n            \"photo\": {\n                \"id\": 1,\n                \"title\": \"pemandangan\",\n                \"caption\": \"ini adalah pemandangan\",\n                \"photo_url\": \"http://google.com/pemandangan.jpeg\",\n                \"user_id\": 5\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Commend",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmcyMkBnbWFpbC5jb20iLCJleHAiOjE3MTE0MzQ0OTgsInVzZXJuYW1lIjoiZmFkaWxhaCJ9.CS0w-C8NTXihrV3eqJ1Vj9TpJ18I69uOMmWo-TSzFLI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"ini pemandangan yang indah\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:2354/comments/2",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"comments",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Commend",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"message\": \"ini pemandangan yang indah\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:2354/comments/2",
+									"host": [
+										"localhost"
+									],
+									"port": "2354",
+									"path": [
+										"comments",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Mar 2024 08:10:10 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "168"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Comment updated\",\n    \"data\": {\n        \"id\": 2,\n        \"message\": \"ini pemandangan yang indah\",\n        \"photoId\": 1,\n        \"userId\": 5,\n        \"updated_at\": \"2024-03-25T14:17:53.375676+07:00\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmcyMkBnbWFpbC5jb20iLCJleHAiOjE3MTE0MzQ0OTgsInVzZXJuYW1lIjoiZmFkaWxhaCJ9.CS0w-C8NTXihrV3eqJ1Vj9TpJ18I69uOMmWo-TSzFLI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:2354/comments/3",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"comments",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Comment",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:2354/comments/3",
+									"host": [
+										"localhost"
+									],
+									"port": "2354",
+									"path": [
+										"comments",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Mar 2024 08:13:35 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Your comment has succesfully deleted\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Social Media",
+			"item": [
+				{
+					"name": "Create Social Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmcyMkBnbWFpbC5jb20iLCJleHAiOjE3MTE0MzQ0OTgsInVzZXJuYW1lIjoiZmFkaWxhaCJ9.CS0w-C8NTXihrV3eqJ1Vj9TpJ18I69uOMmWo-TSzFLI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"twitter22\",\n    \"social_media_url\": \"http://twitter.com/testingan22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:2354/socialmedias",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"socialmedias"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Social Media",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"facebook\",\n    \"social_media_url\": \"http://facebook.com/testingan\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:2354/socialmedias",
+									"host": [
+										"localhost"
+									],
+									"port": "2354",
+									"path": [
+										"socialmedias"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Mar 2024 08:48:30 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "199"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success Create Social Media\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"facebook\",\n        \"social_media_url\": \"http://facebook.com/testingan\",\n        \"user_id\": 5,\n        \"created_at\": \"2024-03-25T15:48:29.940528+07:00\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Social Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmcyMkBnbWFpbC5jb20iLCJleHAiOjE3MTE0MzQ0OTgsInVzZXJuYW1lIjoiZmFkaWxhaCJ9.CS0w-C8NTXihrV3eqJ1Vj9TpJ18I69uOMmWo-TSzFLI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:2354/socialmedias",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"socialmedias"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Social Media",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:2354/socialmedias",
+									"host": [
+										"localhost"
+									],
+									"port": "2354",
+									"path": [
+										"socialmedias"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Mar 2024 09:03:18 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "550"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success Get Social Media\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"facebook\",\n            \"social_media_url\": \"http://facebook.com/testingan\",\n            \"user_id\": 5,\n            \"created_at\": \"2024-03-25T15:48:29.940528+07:00\",\n            \"updated_at\": \"2024-03-25T15:48:29.940528+07:00\",\n            \"User\": {\n                \"id\": 5,\n                \"username\": \"fadilah\",\n                \"profile_image_url\": \"\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"twitter\",\n            \"social_media_url\": \"http://twitter.com/testingan\",\n            \"user_id\": 5,\n            \"created_at\": \"2024-03-25T15:50:14.355478+07:00\",\n            \"updated_at\": \"2024-03-25T15:50:14.355478+07:00\",\n            \"User\": {\n                \"id\": 5,\n                \"username\": \"fadilah\",\n                \"profile_image_url\": \"\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Social Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmcyMkBnbWFpbC5jb20iLCJleHAiOjE3MTE0MzQ0OTgsInVzZXJuYW1lIjoiZmFkaWxhaCJ9.CS0w-C8NTXihrV3eqJ1Vj9TpJ18I69uOMmWo-TSzFLI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"facebook\",\n    \"social_media_url\": \"http://facebook.com/testingan22\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:2354/socialmedias/1",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"socialmedias",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Social Media",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"facebook\",\n    \"social_media_url\": \"http://facebook.com/testingan22\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:2354/socialmedias/1",
+									"host": [
+										"localhost"
+									],
+									"port": "2354",
+									"path": [
+										"socialmedias",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Mar 2024 09:53:13 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Success Update Social Media\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"facebook\",\n        \"social_media_url\": \"http://facebook.com/testingan22\",\n        \"user_id\": 5,\n        \"updated_at\": \"2024-03-25T16:53:12.611398+07:00\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Social Media",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RpbmcyMkBnbWFpbC5jb20iLCJleHAiOjE3MTE0MzQ0OTgsInVzZXJuYW1lIjoiZmFkaWxhaCJ9.CS0w-C8NTXihrV3eqJ1Vj9TpJ18I69uOMmWo-TSzFLI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:2354/socialmedias/3",
+							"host": [
+								"localhost"
+							],
+							"port": "2354",
+							"path": [
+								"socialmedias",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
