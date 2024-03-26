@@ -48,6 +48,7 @@ func (s *defautUser) Register(c *gin.Context) {
 		return
 	}
 
+	req.Password = userData.Password
 	response := generateResponseSuccess(http.StatusCreated, "Register Success", req)
 	c.JSON(http.StatusCreated, response)
 }

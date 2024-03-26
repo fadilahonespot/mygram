@@ -60,7 +60,7 @@ type GetPhotoResponse struct {
 	UserID    int       `json:"user_id"`
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
-	User      UserData  `json:"User"`
+	User      UserData  `json:"user"`
 }
 
 type UserData struct {
@@ -97,7 +97,7 @@ type GetListCommentResponse struct {
 	UserID    int             `json:"user_id"`
 	CreatedAt time.Time       `json:"created_at"`
 	UpdatedAt time.Time       `json:"updated_at"`
-	User      UserDataComment `json:"User"`
+	User      UserDataComment `json:"user"`
 	Photo     PhotoComment    `json:"photo"`
 }
 
@@ -147,7 +147,7 @@ type GetSocialMediaResponse struct {
 	UserID         int        `json:"user_id"`
 	CreatedAt      time.Time  `json:"created_at"`
 	UpdatedAt      time.Time  `json:"updated_at"`
-	User           UserSocial `json:"User"`
+	User           UserSocial `json:"user"`
 }
 
 type UserSocial struct {
